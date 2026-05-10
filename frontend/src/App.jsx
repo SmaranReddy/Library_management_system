@@ -6,14 +6,15 @@ import BookForm from './components/BookForm';
 import BookList from './components/BookList';
 import StudentForm from './components/StudentForm';
 import StudentList from './components/StudentList';
-import IssueBookForm from './components/IssueBookForm';
-import ReturnBookForm from './components/ReturnBookForm';
+import IssueBookPage from './components/IssueBookPage';
+import ReturnBookPage from './components/ReturnBookPage';
 
 const PAGE_INFO = {
   dashboard: { title: 'Dashboard', subtitle: 'Library Management System' },
   books: { title: 'Books', subtitle: 'Manage library book inventory' },
   students: { title: 'Students', subtitle: 'Manage registered students' },
-  transactions: { title: 'Issue / Return', subtitle: 'Issue and return books' },
+  issue: { title: 'Issue Book', subtitle: 'Issue a book to a student' },
+  return: { title: 'Return Book', subtitle: 'Return a borrowed book' },
 };
 
 export default function App() {
@@ -66,19 +67,11 @@ export default function App() {
           </>
         );
 
-      case 'transactions':
-        return (
-          <div className="transaction-grid">
-            <section className="card">
-              <h3 className="card-title">Issue a Book</h3>
-              <IssueBookForm onSuccess={handleTransaction} />
-            </section>
-            <section className="card">
-              <h3 className="card-title">Return a Book</h3>
-              <ReturnBookForm onSuccess={handleTransaction} />
-            </section>
-          </div>
-        );
+      case 'issue':
+        return <IssueBookPage onSuccess={handleTransaction} />;
+
+      case 'return':
+        return <ReturnBookPage onSuccess={handleTransaction} />;
 
       default:
         return null;

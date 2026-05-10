@@ -84,12 +84,17 @@ export default function ReturnBookForm({ onSuccess }) {
         <label className="form-label" htmlFor="return-student">Select Student *</label>
         <select className="form-select" id="return-student" value={studentId} onChange={(e) => setStudentId(e.target.value)}>
           <option value="">&mdash; Select a student &mdash;</option>
-          {students.map((s) => (
-            <option key={s._id} value={s._id}>
-              {s.name} ({s.rollNumber})
-            </option>
-          ))}
+          {students
+            .filter((s) => s.issuedBooks && s.issuedBooks.length > 0)
+            .map((s) => (
+              <option key={s._id} value={s._id}>
+                {s.name} ({s.rollNumber}) &mdash; {s.issuedBooks.length} book(s)
+              </option>
+            ))}
         </select>
+        {students.filter((s) => s.issuedBooks && s.issuedBooks.length > 0).length === 0 && (
+          <span className="form-hint">No students with issued books at the moment.</span>
+        )}
       </div>
 
       {selectedStudent && (

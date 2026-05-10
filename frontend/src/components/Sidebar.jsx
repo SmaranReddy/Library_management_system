@@ -1,10 +1,11 @@
-import { FiGrid, FiBook, FiUsers, FiRepeat, FiBook as FiLogo, FiX } from 'react-icons/fi';
+import { FiGrid, FiBook, FiUsers, FiSend, FiRepeat, FiBook as FiLogo, FiX } from 'react-icons/fi';
 
 const NAV_ITEMS = [
   { key: 'dashboard', label: 'Dashboard', icon: FiGrid },
   { key: 'books', label: 'Books', icon: FiBook },
   { key: 'students', label: 'Students', icon: FiUsers },
-  { key: 'transactions', label: 'Issue / Return', icon: FiRepeat },
+  { key: 'issue', label: 'Issue Book', icon: FiSend },
+  { key: 'return', label: 'Return Book', icon: FiRepeat },
 ];
 
 export default function Sidebar({ activePage, onNavigate, isOpen, onToggle }) {

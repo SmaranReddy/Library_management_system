@@ -3,8 +3,8 @@ import { FiBook, FiUserPlus, FiSend, FiRepeat } from 'react-icons/fi';
 const actions = [
   { key: 'books', label: 'Add Book', desc: 'Add a new title to the library catalog', icon: FiBook, color: 'blue' },
   { key: 'students', label: 'Add Student', desc: 'Register a new library member', icon: FiUserPlus, color: 'green' },
-  { key: 'transactions', label: 'Issue Book', desc: 'Issue a book to a student', icon: FiSend, color: 'purple' },
-  { key: 'transactions', label: 'Return Book', desc: 'Process a book return', icon: FiRepeat, color: 'orange' },
+  { key: 'issue', label: 'Issue Book', desc: 'Issue a book to a student', icon: FiSend, color: 'purple' },
+  { key: 'return', label: 'Return Book', desc: 'Process a book return', icon: FiRepeat, color: 'orange' },
 ];
 
 export default function QuickActions({ onNavigate }) {
