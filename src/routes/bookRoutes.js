@@ -6,16 +6,20 @@ import {
   updateBook,
   deleteBook,
 } from '../controllers/bookController.js';
+import {
+  createBookValidation,
+  updateBookValidation,
+} from '../middleware/validators/bookValidator.js';
 
 const router = Router();
 
 router.route('/')
   .get(getBooks)
-  .post(createBook);
+  .post(createBookValidation, createBook);
 
 router.route('/:id')
   .get(getBookById)
-  .put(updateBook)
+  .put(updateBookValidation, updateBook)
   .delete(deleteBook);
 
 export default router;

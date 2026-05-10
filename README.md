@@ -190,6 +190,82 @@ library-management-api/
 
 ---
 
+---
+
+## API Testing with Postman
+
+Import the following sample requests into Postman to test the APIs.
+
+### Sample Request Bodies
+
+**Create a Book**
+```json
+POST /api/books
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "isbn": "9780743273565",
+  "publishedYear": 1925,
+  "genre": "Fiction",
+  "totalCopies": 3
+}
+```
+
+**Create a Student**
+```json
+POST /api/students
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "rollNumber": "CS2024001",
+  "department": "Computer Science",
+  "phone": "9876543210"
+}
+```
+
+**Issue a Book**
+```json
+POST /api/library/issue/<studentId>/<bookId>
+```
+
+**Return a Book**
+```json
+POST /api/library/return/<studentId>/<bookId>
+```
+
+**Update a Book**
+```json
+PUT /api/books/<bookId>
+{
+  "title": "Updated Title",
+  "totalCopies": 5
+}
+```
+
+### Postman Collection
+
+You can create a Postman collection with the following requests:
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `{{base_url}}/api/books` | List all books |
+| `POST` | `{{base_url}}/api/books` | Create a book |
+| `GET` | `{{base_url}}/api/books/:id` | Get book by ID |
+| `PUT` | `{{base_url}}/api/books/:id` | Update a book |
+| `DELETE` | `{{base_url}}/api/books/:id` | Delete a book |
+| `GET` | `{{base_url}}/api/students` | List all students |
+| `POST` | `{{base_url}}/api/students` | Create a student |
+| `GET` | `{{base_url}}/api/students/:id` | Get student by ID |
+| `PUT` | `{{base_url}}/api/students/:id` | Update a student |
+| `DELETE` | `{{base_url}}/api/students/:id` | Delete a student |
+| `POST` | `{{base_url}}/api/library/issue/:studentId/:bookId` | Issue a book |
+| `POST` | `{{base_url}}/api/library/return/:studentId/:bookId` | Return a book |
+| `GET` | `{{base_url}}/api/health` | Health check |
+
+Set `base_url` variable to `http://localhost:5000` in Postman.
+
+---
+
 ## Important Backend Concepts Implemented
 
 ### Atomic Operations

@@ -6,16 +6,20 @@ import {
   updateStudent,
   deleteStudent,
 } from '../controllers/studentController.js';
+import {
+  createStudentValidation,
+  updateStudentValidation,
+} from '../middleware/validators/studentValidator.js';
 
 const router = Router();
 
 router.route('/')
   .get(getStudents)
-  .post(createStudent);
+  .post(createStudentValidation, createStudent);
 
 router.route('/:id')
   .get(getStudentById)
-  .put(updateStudent)
+  .put(updateStudentValidation, updateStudent)
   .delete(deleteStudent);
 
 export default router;

@@ -127,8 +127,23 @@ const returnBook = async (req, res, next) => {
 // @desc    Get borrowing history of a student
 // @route   GET /api/library/history/:studentId
 // @access  Public
-const getBorrowingHistory = (req, res) => {
-  res.status(200).json({ message: `Borrowing history for student ${req.params.studentId}` });
+const getBorrowingHistory = async (req, res, next) => {
+  try {
+    const { studentId } = req.params;
+    const student = await Student.findById(studentId).populate('issuedBooks');
+    if (!student) {
+      return next(new AppError('Student not found', 404));
+    }
+    res.status(200).json({
+      success: true,
+      data: student.issuedBooks,
+    });
+  } catch (error) {
+    if (error.name === 'CastError') {
+      return next(new AppError('Invalid student ID format', 400));
+    }
+    next(new AppError(error.message, 500));
+  }
 };
 
 export { issueBook, returnBook, getBorrowingHistory };
