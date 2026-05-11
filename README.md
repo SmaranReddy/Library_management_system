@@ -349,11 +349,11 @@ The frontend is organized into 14 focused components, each with a single respons
 
 | Page | Screenshot |
 |---|---|
-| **Dashboard** | ![Dashboard](https://drive.google.com/file/d/1QnbLtEARQ5aSBfxAuTwYW8BNkIq1iPcl/view?usp=drive_link) |
-| **Books Page** | ![Books]([screenshots/books.png](https://drive.google.com/file/d/1_cZqDXsWXdzJUZK1LCdfc-_bb6N6ZYi0/view?usp=drive_link)) |
-| **Students Page** | ![Students]([screenshots/students.png](https://drive.google.com/file/d/1RQLxh9F8_xmLkxOru_Z2oHat-MvfLU5v/view?usp=drive_link)) |
-| **Issue Page** | ![Issue]([screenshots/issue.png](https://drive.google.com/file/d/1tevR8AF_P66KQSjlP3n_k_rkdN4XF0fG/view?usp=drive_link) |
-| **Return Page** | ![Return](https://drive.google.com/file/d/1gp6BRYw3CiGUFDTvWXkZr9MCakx7vaPq/view?usp=drive_link) |
+| **Dashboard** | ![Dashboard](dashboard.png) |
+| **Books Page** | ![Books](books.png) |
+| **Students Page** | ![Students](students.png) |
+| **Issue Page** | ![Issue](issuebook.png) |
+| **Return Page** | ![Return](returnbook.png) |
 
 ---
 
