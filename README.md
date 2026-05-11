@@ -349,11 +349,11 @@ The frontend is organized into 14 focused components, each with a single respons
 
 | Page | Screenshot |
 |---|---|
-| **Dashboard** | ![Dashboard](dashboard.png) |
-| **Books Page** | ![Books](books.png) |
-| **Students Page** | ![Students](students.png) |
-| **Issue Page** | ![Issue](issuebook.png) |
-| **Return Page** | ![Return](returnbook.png) |
+| **Dashboard** | ![Dashboard](screenshots/dashboard.png) |
+| **Books Page** | ![Books](screenshots/books.png) |
+| **Students Page** | ![Students](screenshots/students.png) |
+| **Issue Page** | ![Issue](screenshots/issuebook.png) |
+| **Return Page** | ![Return](screenshots/returnbook.png) |
 
 ---
 
